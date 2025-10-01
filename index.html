@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guess a Resonator</title>
+  <link rel="icon" type="image/png" href="images/RadiantIcon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+
+    <!-- Title -->
+    <header>
+      <h1>Wuwadle</h1>
+      <p>Test your knowledge of WuWa Resonators.</p>
+    </header>
+
+    <!-- Mode Switcher -->
+    <nav class="mode-switcher">
+      <button id="dailyBtn">DAILY</button>
+      <button id="endlessBtn" class="active">ENDLESS</button>
+    </nav>
+
+    <!-- Game Modes -->
+    <div id="dailyMode" class="game-mode">
+      <p>🚧 Daily mode is under construction 🚧</p>
+    </div>
+
+    <div id="endlessMode" class="game-mode active">
+      <!-- Clues -->
+      <section class="clues">
+        <button class="clue" data-unlock="3" disabled>Patch Release (Unlocks in 3 guesses)</button>
+        <button class="clue" data-unlock="6" disabled>Bond Line / Title / Characteristic (Unlocks in 6 guesses)</button>
+        <button class="clue" data-unlock="9" disabled>Voice Lines (Unlocks in 9 guesses)</button>
+      </section>
+
+      <!-- ⌨️ Guess Input -->
+      <section class="guess-input">
+        <input id="guessInput" autocomplete="off" placeholder="Guess a resonator...">
+        <div id="autocompleteList" class="autocomplete-list"></div>
+
+        <!-- result message (correct/wrong) -->
+        <div id="resultMessage" class="hidden"></div>
+
+        <!-- Reset button placed under the input & under the resultMessage -->
+        <div class="guess-controls">
+          <button id="resetBtn" class="control-btn">RESET</button>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <div class="results">
+        <div class="result-header">
+          <button>Resonator</button>
+          <button>Weapon</button>
+          <button>Attribute</button>
+          <button>Nation</button>
+          <button>Boss Material</button>
+        </div>
+        <div class="result-list" id="result-list"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Data must load before script -->
+  <script src="resonators.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
